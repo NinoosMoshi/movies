@@ -6,14 +6,20 @@ import firstLetterUppercase from "../../../validations/firstLetterUppercase";
 import * as yup from 'yup';
 import dateMustNotBeInTheFuture from "../../../validations/dateMustNotBeInTheFuture";
 import { yupResolver } from "@hookform/resolvers/yup";
+import SelectImage from "../../../components/selectImage/SelectImage";
+
+
 
 export default function ActorForm(props: ActorFormProps) {
 
-    const { register, handleSubmit, formState: { errors, isValid, isSubmitting } } = useForm<ActorCreation>({
-        resolver: yupResolver(validationRules),
-        mode: 'onChange',
-        defaultValues: props.model ?? { name: '' }
-    });
+    const { register, handleSubmit, setValue,
+        formState: { errors, isValid, isSubmitting } } = useForm<ActorCreation>({
+            resolver: yupResolver(validationRules),
+            mode: 'onChange',
+            defaultValues: props.model ?? { name: '' }
+        });
+
+    const currentImageURL: string | undefined = props.model?.picture ? props.model.picture as string : undefined;
 
     return (
         <>
@@ -28,6 +34,10 @@ export default function ActorForm(props: ActorFormProps) {
                     <input type="date" autoComplete="off" className="form-control" {...register("dateOfBirth")} />
                     {errors.dateOfBirth && <span className="text-danger">{errors.dateOfBirth.message}</span>}
                 </div>
+
+                <SelectImage
+                    imageUrl={currentImageURL}
+                    selectedImage={file => setValue("picture", file)} />
 
                 <div className="mt-2">
                     <Button type="submit" disabled={!isValid || isSubmitting}>{isSubmitting ? 'Sending...' : 'Send'}</Button>

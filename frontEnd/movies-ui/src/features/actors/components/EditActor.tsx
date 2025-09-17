@@ -14,7 +14,7 @@ export default function EditActor() {
 
     useEffect(() => {
         const timerId = setTimeout(() => {
-            setModel({ name: 'Drama', dateOfBirth: '1990-01-01' });
+            setModel({ name: 'Tom Holland', dateOfBirth: '1990-01-01', picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Roy_keane_2014.jpg/500px-Roy_keane_2014.jpg" });
         }, 1000);
 
         return () => clearTimeout(timerId);

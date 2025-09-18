@@ -5,7 +5,7 @@ import type CreateGenre from "../models/CreateGenre.model";
 export default function CreateGenre() {
 
     const onSubmit: SubmitHandler<CreateGenre> = async (data) => {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         console.log(data);
     }
 

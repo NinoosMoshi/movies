@@ -10,7 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Menu />
-        <div className="container">
+        <div className="container mb-5">
 
           <AppRoutes />
 

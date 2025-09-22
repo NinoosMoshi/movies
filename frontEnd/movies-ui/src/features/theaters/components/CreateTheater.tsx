@@ -1,5 +1,5 @@
 import type { SubmitHandler } from "react-hook-form";
-import type TheaterCreation from "../models/TheaterCreation";
+import type TheaterCreation from "../models/TheaterCreation.model";
 import TheaterForm from "./TheaterForm";
 
 export default function CreateTheater() {

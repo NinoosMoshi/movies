@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import TheaterForm from "./TheaterForm";
 import { useEffect, useState } from "react";
 import Loading from "../../../components/Loading";
-import type TheaterCreation from "../models/TheaterCreation";
+import type TheaterCreation from "../models/TheaterCreation.model";
 import type { SubmitHandler } from "react-hook-form";
 
 

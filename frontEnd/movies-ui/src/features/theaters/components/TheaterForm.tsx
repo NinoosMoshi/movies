@@ -1,6 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import firstLetterUppercase from "../../../validations/firstLetterUppercase";
-import type TheaterCreation from "../models/TheaterCreation"
+import type TheaterCreation from "../models/TheaterCreation.model"
 import * as yup from 'yup';
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { NavLink } from "react-router";
